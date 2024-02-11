@@ -1,0 +1,1 @@
+Thats my frontend CRUD generator. U r welcome)
