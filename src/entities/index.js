@@ -48,7 +48,6 @@ export default [
         name: {type: 'string', editable: true},
         description: {type: 'string', editable: true},
         type: {type: 'entity', entity: 'Type', editable: true},
-        episodes: {type: 'entity', entity: 'Episode', editable: false},
         genres: {type: 'entity[]', entity: 'Genre', editable: true, idsName: 'genreIds'}
       },
       baseUrl: '/titles',

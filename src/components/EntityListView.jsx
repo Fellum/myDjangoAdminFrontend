@@ -28,7 +28,7 @@ function TableRow({row, entity}) {
             {
                 Object.entries(entity.fields).map(([fieldName, fieldDef]) => getTableField(row, fieldName, fieldDef))
             }
-            <td><a href={`${entity.baseUrl}/${row.id}`}>Edit</a></td>
+            <td><a href={`${entity.baseUrl}/${row.id}`}>Details</a></td>
         </tr>
     )
 }

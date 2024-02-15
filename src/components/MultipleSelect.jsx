@@ -1,14 +1,20 @@
 import { useEffect, useState } from "react";
 import { SingleSelect } from "./SingleSelect";
 
-export function MultipleSelect({fieldName, options, setResult}) {
+export function MultipleSelect({fieldName, options, selectedValues=[], setResult}) {
     const [currentItem, setCurrentItem] = useState(null)
     const [selectedItems, setSelectedItems] = useState([])
     
     useEffect(() => setCurrentItem(options[0]), [options])
+
+    useEffect(() => {
+        if(!options.length) return;
+        setSelectedItems(selectedValues.map(value => options.find(option => option.value === value.id)))
+    }, [options]);
+
     useEffect(() => {
         setResult(selectedItems.map(item => item.value))
-    }, [selectedItems])
+    }, [selectedItems]);
 
     const onItemChange = value => {
         const item = options.find(i => i.value == value);

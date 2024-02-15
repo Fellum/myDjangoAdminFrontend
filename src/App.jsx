@@ -5,6 +5,7 @@ import { EntityDetailView } from './components/EntityDetailView';
 import { EntityCreateView } from './components/EntityCreateView';
 
 import './app.css'
+import { EntityEditView } from './components/EntityEditView';
 
 const BASE_URL='http://localhost:3000'
 
@@ -39,6 +40,11 @@ const entityRoutes = entities.map(entity => {
       path: `${baseRoute}/:id`,
       loader: createEntityEditLoader(entity),
       element: <EntityDetailView entity={entity}/>
+    },
+    {
+      path: `${baseRoute}/:id/edit`,
+      loader: createEntityEditLoader(entity),
+      element: <EntityEditView entity={entity}/>
     },
   ]
 }).flat();

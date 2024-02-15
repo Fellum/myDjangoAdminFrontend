@@ -28,6 +28,7 @@ export function EntityDetailView({entity}) {
     }
 
     return (<div>
+        <a href={`${entity.baseUrl}/${value.id}/edit`}>Edit</a>
         {Object.entries(entity.fields).map(([fieldName, fieldDef]) => getEntryField(value, fieldName, fieldDef))}
     </div>)
 }
